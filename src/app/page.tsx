@@ -169,7 +169,7 @@ export default function Home() {
               <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-3xl font-bold text-white">S</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Senthil Kumar</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Senthil Velu Sundaram</h3>
               <p className="text-gray-600 mb-4">Hands-on technical leader & full-stack architect</p>
               <a 
                 href="https://www.linkedin.com/in/siliconsenthil/" 
