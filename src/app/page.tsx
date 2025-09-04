@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -6,17 +9,20 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <img 
+              <Image 
                 src="/cincotree-logo.png" 
                 alt="Cincotree" 
+                width={48}
+                height={48}
                 className="h-12 w-auto"
+                priority
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
-              <a href="#services" className="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+              <Link href="#home" className="text-gray-700 hover:text-primary font-medium transition-colors">Home</Link>
+              <Link href="#services" className="text-gray-700 hover:text-primary font-medium transition-colors">Services</Link>
+              <Link href="#about" className="text-gray-700 hover:text-primary font-medium transition-colors">About</Link>
+              <Link href="#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">Contact</Link>
             </div>
           </div>
         </div>
@@ -53,63 +59,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            What we do
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Full-stack development</h3>
-              <p className="text-gray-600">
-                End-to-end product development with modern tech stacks. 
-                We build scalable web applications, mobile apps, and APIs that grow with your business.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">AI integration</h3>
-              <p className="text-gray-600">
-                Leverage AI to give your product a competitive edge. 
-                From intelligent automation to machine learning features that delight users.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Training & education</h3>
-              <p className="text-gray-600">
-                Upskill your team with hands-on training in modern development practices, 
-                AI tools, and product management methodologies.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Strategic consulting</h3>
-              <p className="text-gray-600">
-                Technical strategy and architecture consulting to help you make the right 
-                technology decisions for long-term success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ...existing code... */}
 
       {/* Why Choose Us Section */}
       <section id="about" className="bg-gray-50 py-20 px-4">
@@ -163,14 +113,20 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">
             Meet the team
-          </h2>
+          </h2>        
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-3xl font-bold text-white">S</span>
+              <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/senthil.jpg"
+                  alt="Senthil Velu Sundaram"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Senthil Velu Sundaram</h3>
-              <p className="text-gray-600 mb-4">Hands-on technical leader & full-stack architect</p>
+              <p className="text-gray-600 mb-4">Hands-on technical leader &amp; full-stack architect</p>
               <a 
                 href="https://www.linkedin.com/in/siliconsenthil/" 
                 target="_blank"
@@ -184,8 +140,14 @@ export default function Home() {
               </a>
             </div>
             <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-3xl font-bold text-white">A</span>
+              <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/abhinaya.jpg"
+                  alt="Abhinaya Sukumar"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Abhinaya Sukumar</h3>
               <p className="text-gray-600 mb-4">Problem solver | Product builder | AI tinkerer</p>
@@ -212,7 +174,7 @@ export default function Home() {
             Ready to launch your product?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Let's discuss how we can help you move from idea to launch at lightning speed.
+            Let&apos;s discuss how we can help you move from idea to launch at lightning speed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 

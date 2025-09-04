@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Blog() {
   return (
     <main className="min-h-screen bg-white">
@@ -8,17 +10,17 @@ export default function Blog() {
             Coming Soon
           </h2>
           <p className="text-gray-500">
-            We're preparing insightful articles about product development, 
+            We&apos;re preparing insightful articles about product development, 
             startup building, and technology trends.
           </p>
-          <a 
+          <Link 
             href="/" 
             className="inline-block mt-6 bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
           >
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
-    </main>
-  );
-}
+      </main>
+    );
+  }
