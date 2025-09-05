@@ -10,7 +10,7 @@ export default function Home() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <Image 
-                src="/cincotree-logo.png" 
+                src="cincotree-logo.png"
                 alt="Cincotree" 
                 width={48}
                 height={48}
@@ -118,7 +118,7 @@ export default function Home() {
             <div className="text-center">
               <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/senthil.jpg"
+                  src="senthil.jpg"
                   alt="Senthil Velu Sundaram"
                   width={128}
                   height={128}
@@ -142,7 +142,7 @@ export default function Home() {
             <div className="text-center">
               <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/abhinaya.jpg"
+                  src="abhinaya.jpg"
                   alt="Abhinaya Sukumar"
                   width={128}
                   height={128}
