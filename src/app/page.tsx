@@ -21,7 +21,7 @@ export default function Home() {
             </div>
             <div className="hidden md:flex space-x-8">
               <Link href="#home" className="text-gray-700 hover:text-primary font-medium transition-colors">Home</Link>
-              <Link href="#services" className="text-gray-700 hover:text-primary font-medium transition-colors">Courses Offered</Link>
+              <Link href="#services" className="text-gray-700 hover:text-primary font-medium transition-colors">Courses</Link>
               <Link href="#about" className="text-gray-700 hover:text-primary font-medium transition-colors">About</Link>
               <Link href="#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">Contact</Link>
             </div>
@@ -113,7 +113,7 @@ export default function Home() {
       <section id="services" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Courses Offered
+            Courses
           </h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
