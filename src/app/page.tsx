@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "../utils/assetPath";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <Image 
-                src="cincotree-logo.png"
+                src={assetPath("cincotree-logo.png")}
                 alt="Cincotree" 
                 width={48}
                 height={48}
@@ -118,7 +119,7 @@ export default function Home() {
             <div className="text-center">
               <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="senthil.jpg"
+                  src={assetPath("senthil.jpg")}
                   alt="Senthil Velu Sundaram"
                   width={128}
                   height={128}
@@ -142,7 +143,7 @@ export default function Home() {
             <div className="text-center">
               <div className="w-32 h-32 bg-gradient-to-br from-[#29496a]/60 to-[#29496a] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="abhinaya.jpg"
+                  src={assetPath("abhinaya.jpg")}
                   alt="Abhinaya Sukumar"
                   width={128}
                   height={128}
