@@ -21,7 +21,7 @@ export default function Home() {
             </div>
             <div className="hidden md:flex space-x-8">
               <Link href="#home" className="text-gray-700 hover:text-primary font-medium transition-colors">Home</Link>
-              <Link href="#services" className="text-gray-700 hover:text-primary font-medium transition-colors">Courses</Link>
+              <Link href="/courses" className="text-gray-700 hover:text-primary font-medium transition-colors">Courses</Link>
               <Link href="#about" className="text-gray-700 hover:text-primary font-medium transition-colors">About</Link>
               <Link href="#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">Contact</Link>
             </div>
@@ -109,40 +109,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Courses Offered Section */}
-      <section id="services" className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Courses
-          </h2>
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Semantic Search with RAG
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Master Elasticsearch fundamentals and architecture, then advance to implementing Retrieval-Augmented Generation (RAG) for semantic search capabilities. Learn to develop solutions that leverage vector embeddings and contextual understanding for intelligent information retrieval.
-              </p>
-              <div className="mb-4">
-                <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                  Hands-on Project
-                </span>
-              </div>
-              <a 
-                href="https://github.com/Abhinaya/elasticsearch-demo" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-primary hover:text-primary-dark font-medium"
-              >
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"/>
-                </svg>
-                Demo Course
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Team Section */}
       <section className="py-20 px-4">
