@@ -113,7 +113,7 @@ export default function PresentationsPage() {
               Interested in having us present?
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              We're available for technical talks, workshops, and presentations at conferences and meetups.
+              We&apos;re available for technical talks, workshops, and presentations at conferences and meetups.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
