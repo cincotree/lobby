@@ -2,7 +2,7 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master, fix-redirects ]
+    branches: [ master, generic-build ]
   workflow_dispatch:
 
 permissions:

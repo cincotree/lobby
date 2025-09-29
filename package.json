@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run build:presentations && next build",
-    "build:presentations": "npm run build:presentations:agents-industrial-swe",
-    "build:presentations:agents-industrial-swe": "cd src/presentations/agents-industrial-swe && npx slidev build slides.md --base /presentations/agents-industrial-swe/ --out ../../../tmp/presentations/agents-industrial-swe && cd ../../../ && mkdir -p public/presentations && cp -r tmp/presentations public/ && rm -rf tmp",
     "start": "next start",
     "lint": "eslint",
+    "build:presentations": "node scripts/build-presentations.mjs",
+    "build": "npm run build:presentations && next build",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {

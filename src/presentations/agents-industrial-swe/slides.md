@@ -13,6 +13,7 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
+routerMode: hash
 ---
 
 # AI Agents: Industrial Software Engineering
