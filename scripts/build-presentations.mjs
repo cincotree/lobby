@@ -36,7 +36,7 @@ function exists(p){ try { fs.accessSync(p); return true; } catch { return false;
     console.log(`\n▶ Building deck: ${id}`);
     await fsp.rm(outDir, { recursive: true, force: true });
     await fsp.mkdir(outDir, { recursive: true });
-    const cmd = `npx slidev build "${slides}" --base "/presentations/${id}/" --out "${outDir}"`;
+    const cmd = `npx slidev build "${slides}" --base "/presentations/${id}/" --out "${outDir}" --emptyOutDir`;
     console.log(cmd);
     execSync(cmd, { stdio: 'inherit' });
   }
