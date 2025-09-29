@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "npm run build:presentations && next build",
+    "build:presentations": "npm run build:presentations:agents-industrial-swe",
+    "build:presentations:agents-industrial-swe": "cd src/presentations/agents-industrial-swe && npx slidev build slides.md --base /presentations/agents-industrial-swe/ --out ../../../tmp/presentations/agents-industrial-swe && cd ../../../ && mkdir -p public/presentations && cp -r tmp/presentations public/ && rm -rf tmp",
     "start": "next start",
     "lint": "eslint",
     "deploy": "gh-pages -d out"
@@ -16,6 +18,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@slidev/cli": "^52.2.4",
+    "@slidev/theme-default": "^0.25.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -24,6 +28,7 @@
     "eslint-config-next": "15.5.0",
     "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vue": "^3.5.22"
   }
 }
