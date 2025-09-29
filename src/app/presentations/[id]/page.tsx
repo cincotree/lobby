@@ -1,7 +1,7 @@
 import ClientRedirect from './client-redirect'
 
 interface PresentationPageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export function generateStaticParams() {
@@ -10,6 +10,7 @@ export function generateStaticParams() {
   ]
 }
 
-export default function PresentationPage({ params }: PresentationPageProps) {
-  return <ClientRedirect id={params.id} />
+export default async function PresentationPage({ params }: PresentationPageProps) {
+  const { id } = await params
+  return <ClientRedirect id={id} />
 }
