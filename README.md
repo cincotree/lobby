@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# cincotree.com
 
-## Getting Started
+Marketing site for Cincotree, an AI engineering practice based in Dubai.
 
-First, run the development server:
+Next.js App Router, statically exported and served from GitHub Pages at
+[www.cincotree.com](https://www.cincotree.com).
+
+## Running it
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Building
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This runs `scripts/build-presentations.mjs` first, which builds every Slidev
+deck under `src/presentations/<id>/slides.md` into `public/presentations/<id>/`,
+then runs `next build` to export the whole site to `out/`.
 
-## Learn More
+Decks are only present after a full build, so slide links 404 under `npm run dev`.
+To rebuild a subset:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+PRESENTATIONS=agents-industrial-swe npm run build:presentations
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/app/          routes; /courses, /blog and /workshops are redirect stubs
+src/components/   Nav, Footer, Section, CTA, Redirect
+src/content/      page copy as typed modules: offers, talks, faq
+src/presentations/ Slidev deck sources
+public/           static assets, CNAME, icons
+```
 
-## Deploy on Vercel
+Copy lives in `src/content` rather than in the components, so wording changes
+do not mean touching layout.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploying
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pushing to `master` triggers `.github/workflows/deploy.yml`, which builds and
+publishes to GitHub Pages. There is no staging environment, so a push to
+`master` is a production release.
+
+Static export means no API routes: the contact path is Cal.com plus email.
+`redirects()` in `next.config.ts` would be ignored under `output: 'export'`,
+which is why moved routes use client-side redirect stubs instead.

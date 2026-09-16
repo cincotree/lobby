@@ -12,7 +12,7 @@ export default function Moved() {
     <div className="min-h-screen bg-white">
       <Nav />
       <main>
-        <Redirect to="/speaking/" label="speaking" />
+        <Redirect to="/speaking/#workshops" label="speaking and workshops" />
       </main>
       <Footer />
     </div>
