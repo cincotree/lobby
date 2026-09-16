@@ -19,8 +19,9 @@ const people = [
     image: "senthil.jpg",
     linkedin: "https://www.linkedin.com/in/siliconsenthil/",
     bio: [
-      "Twenty years of building and running software. A decade at ThoughtWorks, where the habits came from, then fintech at Simpl at transaction scale, and currently consulting on AI/ML for a US HR technology platform.",
-      "He spoke at LangChain Interrupt in San Francisco this year on evaluation-driven development and agent architecture, and regularly at meetups in Dubai.",
+      "Two decades of building software and the businesses around it. A SaaS founder, a VP of Engineering, and still someone who writes code most days. He has put AI into production across several systems, most recently at Rippling.",
+      "He works at both ends of the problem: strategy with a CxO in one meeting, pairing with a new engineer on a gnarly production bug in the next. Twenty years across India, the UK, the Bay Area and the UAE have given him a sharp eye for the techno-business patterns that sink products long before anyone admits it.",
+      "He speaks at technical events, cares more about UX than most engineers do, and spends a good part of his time making other engineers better.",
     ],
   },
   {
@@ -29,8 +30,8 @@ const people = [
     image: "abhinaya.jpg",
     linkedin: "https://www.linkedin.com/in/abhinayasukumar/",
     bio: [
-      "Product engineering and applied AI. Works across retrieval systems, evaluation tooling and the product surfaces that sit on top of them.",
-      "Leads the workshop programme.",
+      "A founder before Cincotree, and a deep technical builder throughout. She has worked as an engineer in India, the UK and Silicon Valley: Clojure on the backend, React teams led, and a habit of walking into an undocumented legacy system and coming out with a map of it.",
+      "She leads Curetally, the hospital management software Cincotree builds for independent clinics in India, where the hard part is never the technology but the workflow a busy pharmacist will actually use. She also runs the workshop programme.",
     ],
   },
 ];

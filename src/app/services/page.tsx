@@ -19,7 +19,7 @@ export default function Services() {
       <main>
         <section className="bg-primary px-6 py-16 text-white md:py-20">
           <div className="mx-auto max-w-5xl">
-            <h1 className="text-3xl leading-[1.15] sm:text-4xl md:text-5xl">Engagement</h1>
+            <h1 className="text-3xl leading-[1.15] sm:text-4xl md:text-5xl">Services</h1>
           </div>
         </section>
 
