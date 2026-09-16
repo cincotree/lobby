@@ -28,12 +28,15 @@ export const talks: Talk[] = [
   },
   {
     id: "agents-industrial-swe",
-    title: "AI Agents: Industrial Software Engineering",
-    venue: "Meetup",
+    title: "Building Reliable AI Agents",
+    venue: "LangChain Meetup",
     location: "Dubai",
-    year: "2025",
+    year: "September 2025",
     description:
       "Software engineering practice for agent systems, and what has to change when an agent stops being a demo and starts being something on call.",
     deckPath: "/presentations/agents-industrial-swe/",
+    writeupUrl:
+      "https://www.linkedin.com/posts/siliconsenthil_presented-my-learnings-on-building-reliable-activity-7378439497639710720-QPhN",
+    writeupLabel: "Post from the evening",
   },
 ];

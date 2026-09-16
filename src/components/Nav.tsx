@@ -41,7 +41,12 @@ export default function Nav({ current }: { current?: string }) {
           ))}
           <Link
             href="/contact"
-            className="rounded-md border border-primary px-5 py-2.5 text-[15px] font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+            aria-current={current === "/contact" ? "page" : undefined}
+            className={
+              current === "/contact"
+                ? "rounded-md bg-primary px-5 py-2.5 text-[15px] font-semibold text-white"
+                : "rounded-md border border-primary px-5 py-2.5 text-[15px] font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+            }
           >
             Book a call
           </Link>

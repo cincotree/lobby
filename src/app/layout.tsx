@@ -32,9 +32,11 @@ export const metadata: Metadata = {
     title: "Cincotree | AI Engineering: from jargon to business impact",
     description:
       "An AI engineering practice. Twenty years building production systems, the last few of them AI.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cincotree" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Cincotree | AI Engineering: from jargon to business impact",
     description:
       "An AI engineering practice. Twenty years building production systems, the last few of them AI.",
