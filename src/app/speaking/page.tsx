@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import Section, { Eyebrow } from "../../components/Section";
+import Section from "../../components/Section";
 import CTA from "../../components/CTA";
 import { talks } from "../../content/talks";
 
@@ -13,20 +13,28 @@ export const metadata: Metadata = {
 
 const modules = [
   {
-    title: "Retrieval that survives real corpora",
-    body: "Chunking, embeddings and hybrid search, built rather than described. Where semantic search quietly fails and what to do instead.",
+    title: "From deterministic to stochastic",
+    body: "The mental shift that everything else rests on. A function you can unit test becomes a system that is right most of the time, and what that changes about how you design, test and ship.",
   },
   {
-    title: "Evaluations that catch real regressions",
-    body: "Building a golden set from your own traffic, scoring what matters, and wiring it into CI so a bad change stops at the pull request.",
+    title: "LLMs and embeddings",
+    body: "How the models actually behave: context, tokens, temperature, structured output, and what embeddings represent. Enough theory to reason about failures, not enough to write a paper.",
   },
   {
-    title: "Cost and latency budgeting",
-    body: "Modelling what a feature costs per request and at ten times the traffic. Caching, routing and the trade-offs between them.",
+    title: "Retrieval and RAG",
+    body: "Chunking, indexing and hybrid search built by hand rather than described. Where naive semantic search quietly fails, and how to tell that it has.",
   },
   {
-    title: "Failure modes we have shipped",
-    body: "The specific ways agent systems break in production, taken from our own work rather than a blog post.",
+    title: "Building agents",
+    body: "Tools, planning and control flow. When an agent is the right answer, when a plain call is, and why the architecture that looks correct on a whiteboard often is not.",
+  },
+  {
+    title: "Evals, tracing and tooling",
+    body: "The delivery process around a stochastic system. Building a golden set, scoring what matters, wiring it into CI, and tracing a production answer back to the call that produced it.",
+  },
+  {
+    title: "Performance and cost",
+    body: "What a feature costs per request and at ten times the traffic. Latency budgets, caching, model routing, and the monitoring that tells you when either drifts.",
   },
 ];
 
@@ -106,26 +114,32 @@ export default function Speaking() {
         ))}
 
         <Section tone="alt" id="workshops">
-          <Eyebrow>Workshops</Eyebrow>
-          <h2 className="max-w-2xl text-3xl leading-tight md:text-4xl">
-            Time with your engineers.
-          </h2>
-          <p className="mt-6 max-w-2xl leading-relaxed text-gray-600">
-            Hands on keyboards, in your codebase where we can. Various durations, on-site or
-            remote. Gets a whole team to the same baseline.
-          </p>
-          <div className="mt-14 grid gap-10 md:grid-cols-2">
+          <h2 className="text-3xl leading-tight md:text-4xl">Workshops</h2>
+          <div className="mt-8 max-w-2xl space-y-5 leading-relaxed text-gray-600">
+            <p>
+              We turn backend and fullstack engineers into AI engineers. Most of them have spent
+              a career making systems behave the same way every time. AI asks them to build
+              systems that are right most of the time, and to prove it. That shift is the whole
+              workshop.
+            </p>
+            <p>
+              Every session is hands on. Your engineers build one project with us, start to
+              finish, and pick up the concepts through the thing they are building rather than
+              ahead of it. They keep the project and the materials.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {modules.map((item) => (
               <div key={item.title} className="border-t border-gray-200 pt-5">
-                <h3 className="text-xl text-gray-900">{item.title}</h3>
+                <h3 className="text-lg text-gray-900">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-gray-600">{item.body}</p>
               </div>
             ))}
           </div>
           <p className="mt-12 max-w-2xl leading-relaxed text-gray-600">
-            The shape moves with the team. A group that already ships AI features spends more time
-            on evaluation and cost. A group starting out spends most of it on retrieval. We agree
-            the balance and the length beforehand, and your team keeps the materials.
+            The length and the balance move with the team. A group already shipping AI features
+            spends more of it on evals, cost and monitoring. A group starting out spends more on
+            retrieval and the shift in thinking. We agree the shape beforehand. On-site or remote.
           </p>
         </Section>
 
