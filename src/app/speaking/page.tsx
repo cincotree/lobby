@@ -14,27 +14,27 @@ export const metadata: Metadata = {
 const modules = [
   {
     title: "From deterministic to stochastic",
-    body: "The mental shift that everything else rests on. A function you can unit test becomes a system that is right most of the time, and what that changes about how you design, test and ship.",
+    body: "The big shift. A function you can unit test becomes a system that is right most of the time. That changes how you design, test and ship.",
   },
   {
     title: "LLMs and embeddings",
-    body: "How the models actually behave: context, tokens, temperature, structured output, and what embeddings represent. Enough theory to reason about failures, not enough to write a paper.",
+    body: "How the models actually behave. Context, tokens, temperature, structured output, and what an embedding really is. Enough theory to debug things, no more.",
   },
   {
     title: "Retrieval and RAG",
-    body: "Chunking, indexing and hybrid search built by hand rather than described. Where naive semantic search quietly fails, and how to tell that it has.",
+    body: "Chunking, indexing and hybrid search, built by hand. Where simple semantic search falls over, and how you would notice.",
   },
   {
     title: "Building agents",
-    body: "Tools, planning and control flow. When an agent is the right answer, when a plain call is, and why the architecture that looks correct on a whiteboard often is not.",
+    body: "Tools, planning and control flow. When you need an agent, when one plain call will do, and why the neat diagram rarely survives contact with users.",
   },
   {
     title: "Evals, tracing and tooling",
-    body: "The delivery process around a stochastic system. Building a golden set, scoring what matters, wiring it into CI, and tracing a production answer back to the call that produced it.",
+    body: "How you ship and watch a system like this. Build a golden set, score what matters, run it in CI, and trace any answer back to the call behind it.",
   },
   {
     title: "Performance and cost",
-    body: "What a feature costs per request and at ten times the traffic. Latency budgets, caching, model routing, and the monitoring that tells you when either drifts.",
+    body: "What a feature costs per request, and at ten times the traffic. Latency budgets, caching, model routing, and how to spot when either slips.",
   },
 ];
 
@@ -115,19 +115,12 @@ export default function Speaking() {
 
         <Section tone="alt" id="workshops">
           <h2 className="text-3xl leading-tight md:text-4xl">Workshops</h2>
-          <div className="mt-8 max-w-2xl space-y-5 leading-relaxed text-gray-600">
-            <p>
-              We turn backend and fullstack engineers into AI engineers. Most of them have spent
-              a career making systems behave the same way every time. AI asks them to build
-              systems that are right most of the time, and to prove it. That shift is the whole
-              workshop.
-            </p>
-            <p>
-              Every session is hands on. Your engineers build one project with us, start to
-              finish, and pick up the concepts through the thing they are building rather than
-              ahead of it. They keep the project and the materials.
-            </p>
-          </div>
+          <p className="mt-8 leading-relaxed text-gray-600">
+            We help backend and fullstack engineers become AI engineers. They have spent years
+            building systems that behave the same way every time. AI does not work like that, and
+            it takes some getting used to. So we teach it by building. Your team works through one
+            project with us, picks up the ideas as they go, and keeps everything at the end.
+          </p>
           <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {modules.map((item) => (
               <div key={item.title} className="border-t border-gray-200 pt-5">
@@ -136,10 +129,10 @@ export default function Speaking() {
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-2xl leading-relaxed text-gray-600">
-            The length and the balance move with the team. A group already shipping AI features
-            spends more of it on evals, cost and monitoring. A group starting out spends more on
-            retrieval and the shift in thinking. We agree the shape beforehand. On-site or remote.
+          <p className="mt-12 leading-relaxed text-gray-600">
+            We agree the length and the mix before we start. Teams already shipping AI spend more
+            of it on evals, cost and monitoring. Teams starting out spend more on retrieval and on
+            the change in thinking. On-site or remote, whichever suits you.
           </p>
         </Section>
 
