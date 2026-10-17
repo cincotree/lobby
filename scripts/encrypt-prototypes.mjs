@@ -1,16 +1,23 @@
 import fs from 'fs';
 import fsp from 'fs/promises';
 import path from 'path';
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 
 const ROOT = process.cwd();
 const SRC  = path.join(ROOT, 'src', 'prototypes');
 const OUT  = path.join(ROOT, 'public', 'prototypes');
 const CONFIG = path.join(ROOT, '.staticrypt');
+const TEMPLATE = path.join(ROOT, 'scripts', 'prototype-template.html');
+const DEFAULT_INSTRUCTIONS = 'This prototype is shared privately. Enter the password you were sent to open it.';
 
 function isDir(p){ try { return fs.statSync(p).isDirectory(); } catch { return false; } }
 function exists(p){ try { fs.accessSync(p); return true; } catch { return false; } }
 function passwordEnvVar(id){ return `PROTOTYPE_PASSWORD_${id.toUpperCase().replace(/[^A-Z0-9]/g, '_')}`; }
+function defaultTitle(id){ return id.split(/[-_]/).filter(Boolean).map(w => w[0].toUpperCase() + w.slice(1)).join(' '); }
+function readMeta(id){
+  const file = path.join(SRC, id, 'meta.json');
+  return exists(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+}
 
 (async () => {
   if (!isDir(SRC)) {
@@ -44,8 +51,16 @@ function passwordEnvVar(id){ return `PROTOTYPE_PASSWORD_${id.toUpperCase().repla
     await fsp.rm(outDir, { recursive: true, force: true });
     await fsp.mkdir(outDir, { recursive: true });
 
-    const cmd = `npx staticrypt "${path.join(SRC, id, 'index.html')}" -d "${outDir}" -c "${path.relative(ROOT, path.join(CONFIG, `${id}.json`))}" --remember 30 --template-title "Cincotree prototype" --template-instructions "Enter the password to view this prototype."`;
-    execSync(cmd, { stdio: 'inherit', cwd: ROOT, env });
+    const meta = readMeta(id);
+    execFileSync('npx', [
+      'staticrypt', path.join(SRC, id, 'index.html'),
+      '-d', outDir,
+      '-c', path.relative(ROOT, path.join(CONFIG, `${id}.json`)),
+      '-t', TEMPLATE,
+      '--remember', '30',
+      '--template-title', meta.title || defaultTitle(id),
+      '--template-instructions', meta.instructions || DEFAULT_INSTRUCTIONS,
+    ], { stdio: 'inherit', cwd: ROOT, env });
   }
 
   console.log('\n✓ Encrypted prototypes written to public/prototypes/*');
