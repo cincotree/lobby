@@ -1,5 +1,6 @@
 import fs from 'fs';
 import fsp from 'fs/promises';
+import os from 'os';
 import path from 'path';
 import { execFileSync } from 'child_process';
 
@@ -48,19 +49,24 @@ function readMeta(id){
 
     console.log(`\n► Encrypting prototype: ${id}`);
     if (!env.STATICRYPT_PASSWORD) console.log(`${envVar} not set, enter the password for "${id}":`);
-    await fsp.rm(outDir, { recursive: true, force: true });
-    await fsp.mkdir(outDir, { recursive: true });
-
     const meta = readMeta(id);
-    execFileSync('npx', [
-      'staticrypt', path.join(SRC, id, 'index.html'),
-      '-d', outDir,
-      '-c', path.relative(ROOT, path.join(CONFIG, `${id}.json`)),
-      '-t', TEMPLATE,
-      '--remember', '30',
-      '--template-title', meta.title || defaultTitle(id),
-      '--template-instructions', meta.instructions || DEFAULT_INSTRUCTIONS,
-    ], { stdio: 'inherit', cwd: ROOT, env });
+    const tmpDir = await fsp.mkdtemp(path.join(os.tmpdir(), `prototype-${id}-`));
+    try {
+      execFileSync('npx', [
+        'staticrypt', path.join(SRC, id, 'index.html'),
+        '-d', tmpDir,
+        '-c', path.relative(ROOT, path.join(CONFIG, `${id}.json`)),
+        '-t', TEMPLATE,
+        '--remember', '30',
+        '--template-title', meta.title || defaultTitle(id),
+        '--template-instructions', meta.instructions || DEFAULT_INSTRUCTIONS,
+      ], { stdio: 'inherit', cwd: ROOT, env });
+
+      await fsp.mkdir(outDir, { recursive: true });
+      await fsp.copyFile(path.join(tmpDir, 'index.html'), path.join(outDir, 'index.html'));
+    } finally {
+      await fsp.rm(tmpDir, { recursive: true, force: true });
+    }
   }
 
   console.log('\n✓ Encrypted prototypes written to public/prototypes/*');
