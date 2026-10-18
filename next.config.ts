@@ -1,14 +1,15 @@
 import type { NextConfig } from 'next';
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
-const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: { unoptimized: true },
-  ...(process.env.NODE_ENV === 'development' && {
-    async rewrites() {
-      return [{ source: '/prototypes/:id/', destination: '/prototypes/:id/index.html' }];
-    },
-  }),
-};
-
-export default nextConfig;
+export default function nextConfig(phase: string): NextConfig {
+  return {
+    output: 'export',
+    trailingSlash: true,
+    images: { unoptimized: true },
+    ...(phase === PHASE_DEVELOPMENT_SERVER && {
+      async rewrites() {
+        return [{ source: '/prototypes/:id/', destination: '/prototypes/:id/index.html' }];
+      },
+    }),
+  };
+}
